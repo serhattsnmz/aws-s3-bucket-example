@@ -114,69 +114,69 @@ class AwsBucketApi:
         )
         return response.get("DeleteMarker")
 
-        """
-        RETURN-0:
-            Example settings file:
-            {
-                "user_access_id" : "",
-                "user_secret" : "",
-                "bucket_name" : "",
-                "bucket_region" : "us-east-2"
-            }
+    """
+    RETURN-0:
+        Example settings file:
+        {
+            "user_access_id" : "",
+            "user_secret" : "",
+            "bucket_name" : "",
+            "bucket_region" : "us-east-2"
+        }
 
-        RETURN-1 : 
-            Return result for presigned post fields.
-            Referance : https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.generate_presigned_post
+    RETURN-1 : 
+        Return result for presigned post fields.
+        Referance : https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.generate_presigned_post
 
-            {
-                "fields": {
-                    "Content-Type": "image/jpg",
-                    "key": "pics/${filename}",
-                    "policy": "eyJleHBpcmF0aW9uIjogIjIwMjItMDEtMTFUMjE6NDU6MTZaIiwgImNvbmRpdGlvbnMiOiBbWyJzdGFydHMtd2l0aCIsICIkQ29udGVudC1UeXBlIiwgIiJdLCB7ImJ1Y2tldCI6ICJhcmVucGktdGVzdCJ9LCBbInN0YXJ0cy13aXRoIiwgIiRrZXkiLCAicGljcy8iXSwgeyJ4LWFtei1hbGdvcml0aG0iOiAiQVdTNC1ITUFDLVNIQTI1NiJ9LCB7IngtYW16LWNyZWRlbnRpYWwiOiAiQUtJQVJNV0VMQlpaNlNSUDNKR0gvMjAyMjAxMTEvdXMtZWFzdC0yL3MzL2F3czRfcmVxdWVzdCJ9LCB7IngtYW16LWRhdGUiOiAiMjAyMjAxMTFUMjA0NTE2WiJ9XX0=",
-                    "x-amz-algorithm": "AWS4-HMAC-SHA256",
-                    "x-amz-credential": "AKIARMWELBZZ6SRP3JGH/20220111/us-east-2/s3/aws4_request",
-                    "x-amz-date": "20220111T204516Z",
-                    "x-amz-signature": "d74f8ee191ea5d6f155af9a49def82adbeb055e92edb911a7dc5b44207d36bdd"
-                },
-                "url": "https://s3.us-east-2.amazonaws.com/presigned-test"
-            }
+        {
+            "fields": {
+                "Content-Type": "image/jpg",
+                "key": "pics/${filename}",
+                "policy": "eyJleHBpcmF0aW9uIjogIjIwMjItMDEtMTFUMjE6NDU6MTZaIiwgImNvbmRpdGlvbnMiOiBbWyJzdGFydHMtd2l0aCIsICIkQ29udGVudC1UeXBlIiwgIiJdLCB7ImJ1Y2tldCI6ICJhcmVucGktdGVzdCJ9LCBbInN0YXJ0cy13aXRoIiwgIiRrZXkiLCAicGljcy8iXSwgeyJ4LWFtei1hbGdvcml0aG0iOiAiQVdTNC1ITUFDLVNIQTI1NiJ9LCB7IngtYW16LWNyZWRlbnRpYWwiOiAiQUtJQVJNV0VMQlpaNlNSUDNKR0gvMjAyMjAxMTEvdXMtZWFzdC0yL3MzL2F3czRfcmVxdWVzdCJ9LCB7IngtYW16LWRhdGUiOiAiMjAyMjAxMTFUMjA0NTE2WiJ9XX0=",
+                "x-amz-algorithm": "AWS4-HMAC-SHA256",
+                "x-amz-credential": "AKIARMWELBZZ6SRP3JGH/20220111/us-east-2/s3/aws4_request",
+                "x-amz-date": "20220111T204516Z",
+                "x-amz-signature": "d74f8ee191ea5d6f155af9a49def82adbeb055e92edb911a7dc5b44207d36bdd"
+            },
+            "url": "https://s3.us-east-2.amazonaws.com/presigned-test"
+        }
 
-        RETURN-2 : 
-            Return result for .list_objects()
-            {
-                "Contents": [
-                    {
-                        "ETag": "\"38cca22decbde960a23a9220717f9d6f\"",
-                        "Key": "pics/test.jpg",
-                        "LastModified": "2022-01-11 19:41:09+00:00",
-                        "Owner": {
-                            "ID": "cc3ed6bf853acf17c047078068f5dc9af45df2aaebdf8ce048a79a74e183ff1d"
-                        },
-                        "Size": 54320,
-                        "StorageClass": "STANDARD"
-                    }
-                ],
-                "EncodingType": "url",
-                "IsTruncated": false,
-                "Marker": "",
-                "MaxKeys": 1000,
-                "Name": "presigned-test",
-                "Prefix": "pics",
-                "ResponseMetadata": {
-                    "HTTPHeaders": {
-                        "content-type": "application/xml",
-                        "date": "Tue, 11 Jan 2022 20:45:17 GMT",
-                        "server": "AmazonS3",
-                        "transfer-encoding": "chunked",
-                        "x-amz-bucket-region": "us-east-2",
-                        "x-amz-id-2": "lG6LHbG4fieu7ON8SlcKdQnmSCgVR3N29HP5cZk/Ltwt/RHqIeuI8ICfLmAmLhuKSi4q7jMWsLE=",
-                        "x-amz-request-id": "AV9TWPN2K6XAPAX4"
+    RETURN-2 : 
+        Return result for .list_objects()
+        {
+            "Contents": [
+                {
+                    "ETag": "\"38cca22decbde960a23a9220717f9d6f\"",
+                    "Key": "pics/test.jpg",
+                    "LastModified": "2022-01-11 19:41:09+00:00",
+                    "Owner": {
+                        "ID": "cc3ed6bf853acf17c047078068f5dc9af45df2aaebdf8ce048a79a74e183ff1d"
                     },
-                    "HTTPStatusCode": 200,
-                    "HostId": "lG6LHbG4fieu7ON8SlcKdQnmSCgVR3N29HP5cZk/Ltwt/RHqIeuI8ICfLmAmLhuKSi4q7jMWsLE=",
-                    "RequestId": "AV9TWPN2K6XAPAX4",
-                    "RetryAttempts": 0
+                    "Size": 54320,
+                    "StorageClass": "STANDARD"
                 }
+            ],
+            "EncodingType": "url",
+            "IsTruncated": false,
+            "Marker": "",
+            "MaxKeys": 1000,
+            "Name": "presigned-test",
+            "Prefix": "pics",
+            "ResponseMetadata": {
+                "HTTPHeaders": {
+                    "content-type": "application/xml",
+                    "date": "Tue, 11 Jan 2022 20:45:17 GMT",
+                    "server": "AmazonS3",
+                    "transfer-encoding": "chunked",
+                    "x-amz-bucket-region": "us-east-2",
+                    "x-amz-id-2": "lG6LHbG4fieu7ON8SlcKdQnmSCgVR3N29HP5cZk/Ltwt/RHqIeuI8ICfLmAmLhuKSi4q7jMWsLE=",
+                    "x-amz-request-id": "AV9TWPN2K6XAPAX4"
+                },
+                "HTTPStatusCode": 200,
+                "HostId": "lG6LHbG4fieu7ON8SlcKdQnmSCgVR3N29HP5cZk/Ltwt/RHqIeuI8ICfLmAmLhuKSi4q7jMWsLE=",
+                "RequestId": "AV9TWPN2K6XAPAX4",
+                "RetryAttempts": 0
             }
-        
-        """
+        }
+    
+    """

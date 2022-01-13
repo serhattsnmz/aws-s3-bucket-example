@@ -1,6 +1,6 @@
 {
-    "user_access_id" : "",
-    "user_secret" : "",
-    "bucket_name" : "",
-    "bucket_region" : "us-east-2"
+    "user_access_id" : "<aws-access-key-id>",
+    "user_secret" : "<aws-secret-access-key>",
+    "bucket_name" : "<bucket-name>",
+    "bucket_region" : "<bucket-region-name>"
 }
